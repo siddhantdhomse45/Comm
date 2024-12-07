@@ -363,6 +363,12 @@ h3>a {
   --background: var(--middle-blue-green);
 }
 
+/* .navbar.active {
+  visibility: visible;
+  transform: translateX(-300px);
+  transition: 0.5s var(--cubic-in);
+} */
+/* Navbar default state */
 .navbar {
   background: var(--white);
   position: fixed;
@@ -374,15 +380,19 @@ h3>a {
   padding: 30px 25px;
   z-index: 3;
   visibility: hidden;
-  transition: 0.25s var(--cubic-out);
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
 }
 
+/* Navbar active state */
 .navbar.active {
   visibility: visible;
-  transform: translateX(-300px);
-  transition: 0.5s var(--cubic-in);
+  opacity: 1;
+  transform: translateX(0);
 }
 
+/* Navbar top section */
 .navbar-top {
   display: flex;
   justify-content: space-between;
@@ -390,17 +400,56 @@ h3>a {
   margin-bottom: 60px;
 }
 
-.nav-close-btn ion-icon {
-  font-size: 23px;
+/* Close button */
+.nav-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
 }
 
+/* Navbar links */
 .navbar-link {
-  padding-block: 10px;
+  display: block;
+  padding: 15px 0;
+  font-size: 16px;
+  font-weight: 500;
   color: var(--eerie-black);
+  text-decoration: none;
 }
 
-.navbar-list>li:not(:last-child) {
-  border-bottom: 1px solid var(--cultured);
+.navbar-link:hover {
+  color: var(--primary-color);
+}
+
+/* Open button for mobile menu */
+.nav-open-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  z-index: 3;
+  cursor: pointer;
+ 
+}
+
+.nav-open-btn span {
+  display: block;
+  width: 30px;
+  height: 5px;
+  background-color: var(--eerie-black);
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .nav-open-btn {
+    display: block;
+  }
+
+  .navbar {
+    right: 0;
+  }
 }
 
 .overlay {
@@ -606,7 +655,7 @@ h3>a {
   align-items: center;
   gap: 8px;
   background: var(--white);
-  color: var(--eerie-black);
+  color: black;
 }
 
 .product-card .card-action-btn:is(:hover, :focus) {
@@ -1161,6 +1210,9 @@ h3>a {
   .navbar-link:is(:hover, :focus) {
       color: var(--middle-blue-green);
   }
+  
+  
+  
   /**
  * CATEGORY
  */
