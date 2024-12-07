@@ -10,8 +10,8 @@ const Hero = () => {
                 style={{
                     backgroundImage: `url("https://github.com/codewithsadee/casmart/blob/master/assets/images/hero-banner.jpg?raw=true")`,
                     backgroundSize: 'cover',        // Ensure the image covers the entire section
-                    backgroundRepeat: 'no-repeat', // Prevent the image from repeating
-                    backgroundPosition: 'center',  // Center the image
+                    backgroundRepeat: 'no-repeat',
+                    // backgroundPosition: 'center',  
                     height: '100vh',               // Set section height
                     color: 'white',                // Adjust text color for readability
                 }}
